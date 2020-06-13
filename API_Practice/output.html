@@ -4,15 +4,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>HTML Elements Reference</title>
+    <title>HTML API Practice</title>
     <script src="jquery-3.5.1.min.js"></script>
     <script src="backend_prac.js"></script>
     <link rel="stylesheet" href="output_style.css">
 </head>
+
 <body>
+    <h1>The Weather in Clarksburg is...</h1>
+    <div class="cburg-weather-container">
+        <img class="photo">
+        <p class="weather"></p>
+        <p class="temperature"></p>
+    </div>
 
-    <h1>This is a heading</h1>
-    <p>This is a paragraph.</p>
-
+    <!--DROPDOWN MENU CONTENT-->
+     <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content">
+            <div class="cburg-weather-container">
+                 <p class="TempF" onclick="displayF()">Fahrenheit</p>
+            </div>
+            <p class="TempC" onclick="alert('C!')">Celcius</p>
+            <p class="TempK" onclick="alert('K!')">Kelvin</p>
+        </div>
+    </div> 
 </body>
 </html>
