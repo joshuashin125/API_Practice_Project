@@ -55,19 +55,14 @@ window.onload = function() {
 }
 
 function getCovidStats() {
-  fetch('https://coronavirus-tracker-api.herokuapp.com/v2/locations/225')
+  fetch('https://covidtracking.com/api/v1/states/md/current.json')
   .then(function(resp) { return resp.json() })
   .then(function(data) {
-      let population = data.location.country_population;
-      let update = data.location.last_updated;
-      let confirmedCases = data.location.latest.confirmed;
-      let deaths = data.location.latest.deaths;
+      let confirmedCases = data.positive;
+      let deaths = data.death;
 
-      document.getElementById('population').innerHTML = population.toLocaleString('en');
-      document.getElementById('update').innerHTML = update.substr(0, 10);
       document.getElementById('cases').innerHTML = confirmedCases.toLocaleString('en');
       document.getElementById('deaths').innerHTML = deaths.toLocaleString('en');
-      document.getElementById('percent').innerHTML = ((Number(deaths)/Number(confirmedCases))*100).toLocaleString("en", {minimumFractionDigits: 2, maximumFractionDigits: 2}) + "%";
 
 
 
@@ -77,4 +72,3 @@ function getCovidStats() {
       console.log("error");
   })
 }
-
