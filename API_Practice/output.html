@@ -6,39 +6,52 @@
 <head>
     <title>HTML API Practice</title>
     <!--Settings that enable viewing on all devices-->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="jquery-3.5.1.min.js"></script>
-    
     <link rel="stylesheet" href="output_style.css">
 </head>
 
 <body>
-    <input type="text" autocomplete="off" class="search-box" placeholder="Enter City Name" />
-    
-    <div class="cburg-weather-container">
+    <div class="app-wrap">
+      <header>
+        <input type="text" autocomplete="off" class="search-box" placeholder="Search for a Location..." />
+		<button type="submit" id="search-btn">Search</button>
+      </header>
 
-    <section class="location">
-        <div class="city">Northampton, GB</div>
-        <div class="date">Thursday 10 January 2020</div>
-      </section>
 
-      <div class="current">
-        <div class="temp">15<span>°c</span></div>
-        <div class="weather">Sunny</div>
-        <div class="hi-low">13°c / 16°c</div>
-      </div>
-      <script src="backend_prac.js"></script>
-        <!--img class="photo">
-        <p class="weather"></p>
-        
-        <ul class=weatherTempList>
+      <main>
+        <div class="location">
+          <div class="city"></div>
+          <div class="date"></div>
+        </div>
+        <div class="current">
+          <div class="temp"><span></span></div>
+          <div class="weather"></div>
+          <div class="hi-low"></div>
+        </div>
 
-        </ul-->
+		<!--Corona Code-->
+		<div class="data-container">
+		<div class="stats-container">
+			<h4>Cases</h4>
+			<h1 id="cases"></h1>
+			<h4>Deaths</h4>
+			<h1 id="deaths"></h1>
+			<h4>% of Deaths</h4>
+			<h1 id="percent"></h1>
+		</div>
+		<div class="location-container">
+			<h4>Country</h4>
+			<h1 id="country">United States</h1>
+			<h4>Population</h4>
+			<h1 id="population"></h1>
+			<h4>Last Updated</h4>
+			<h1 id="update"></h1>
+		</div>
+	</div>
+      </main>
     </div>
-
-    
-
-
-
-</body>
-</html>
+    <script src="backend_prac.js"></script>
+  </body>
+  </html>
