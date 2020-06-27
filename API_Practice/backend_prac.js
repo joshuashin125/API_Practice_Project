@@ -10,6 +10,7 @@ searchbox.addEventListener('keypress', setQuery);
 function setQuery(evt) {
   if (evt.keyCode == 13) {
     getResults(searchbox.value);
+	getCovidStats();
   }
 }
 
@@ -50,9 +51,11 @@ function dateBuilder (d) {
   return `${day} ${date} ${month} ${year}`;
 }
 
+/*
 window.onload = function() {
   getCovidStats();
 }
+*/
 
 function getCovidStats() {
   fetch('https://covidtracking.com/api/v1/states/md/current.json')
