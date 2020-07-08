@@ -16,36 +16,32 @@
     <div class="app-wrap">
       <header>
         <input type="text" autocomplete="off" class="search-box" placeholder="Search for a Location..." />
-		<button type="submit" id="search-btn">Search</button>
+        <button type="submit" id="search-btn">Search</button>
       </header>
 
 
       <main>
-        <div class="location">
-          <div class="city"></div>
-          <div class="date"></div>
-        </div>
-        <div class="current">
-          <div class="temp"><span></span></div>
-          <div class="weather"></div>
-          <div class="hi-low"></div>
-        </div>
-        <div class="data-container">
+		<div class="weather-container">
+			<div class="location">
+				<div class="city"></div>
+				<div class="date"></div>
+			</div>
+			<div class="current">
+				<div class="temp"><span></span></div>
+				<div class="weather"></div>
+				<div class="hi-low"></div>
+			</div>
+		</div>
+        <div class="covid-container">
           <div class="stats-container">
-            <h4>Cases</h4>
-            <h1 id="cases"></h1>
-            <h4>Deaths</h4>
-            <h1 id="deaths"></h1>
-            <h4>% of Deaths</h4>
-            <h1 id="percent"></h1>
-          </div>
-          <div class="location-container">
             <h4>Country</h4>
-            <h1 id="country">United States</h1>
-            <h4>Population</h4>
-            <h1 id="population"></h1>
-            <h4>Last Updated</h4>
-            <h1 id="update"></h1>
+            <h1 id="countryNm"></h1>
+			<h4>Case Total</h4>
+            <h1 id="cases"></h1>
+            <h4>Death Total</h4>
+            <h1 id="deaths"></h1>
+            <h4>Survival Rate</h4>
+            <h1 id="sRate"></h1>
           </div>
         </div>
       </main>
