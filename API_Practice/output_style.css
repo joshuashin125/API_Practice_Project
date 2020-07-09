@@ -45,7 +45,7 @@ header input:focus {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-main {
+/*main {
   flex: 1 1 100%;
   padding: 25px 25px 50px;
   right: 150px;
@@ -53,10 +53,11 @@ main {
   flex-direction: column;
   align-items: left;
   text-align: left;
-}
+}*/
 
+/*
 .location .city {
-  color: black;
+  color: green;
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 30px;
@@ -97,7 +98,7 @@ main {
   font-weight: 700;
   margin-bottom: 30px;
   text-align: center;
-}
+}*/
 
 header #search-btn{
 	height: 50px;
@@ -105,7 +106,7 @@ header #search-btn{
 	padding: 10px;
 	border: none;
 	outline: box;
-    background-color: #ef6907;
+  background-color: #ef6907;
 	color: gray;
 	font-size: 25px;
 }
@@ -116,14 +117,18 @@ header #search-btn:hover{
 }
 
 .stats-container {
-	text-align: center;
-	float: right;
+  margin-left: 425px;
+  text-align: center;
+  float: center;
+  color: green;
 	display: inline-block;
 }
 
+
+
 .covid-container {
 	border: 2px solid #feb47b;
-	margin-left: 55%;
+	margin-left: 45%;
 	margin-right: 5%;
 }
 h4 {
@@ -140,7 +145,10 @@ h4 {
 .weather-container {
 	border: 2px solid #feb47b;
 	margin-left: 5%;
-	margin-right: 45%;
+  margin-right: 45%;
+  float: center;
+  color: green;
+  display: inline-block;
 }
 .footer {
 	font-family: 'Roboto', sans-serif;
@@ -148,151 +156,3 @@ h4 {
 	font-size: 75%;
 	padding: 5px;
 }
-
-/*
-
-Original CSS for reference
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'montserrat', sans-serif;
-  background-image: url('bg.jpg');
-  background-size: cover;
-  background-position: top center;
-}
-
-.app-wrap {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: lightblue;
-}
-
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 15px 15px;
-}
-
-header input {
-  width: 100%;
-  max-width: 350px;
-  height: 50px;
-  padding: 10px 15px;
-  border: none;
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-bottom: 3px solid #ef6907;
-  
-  color: #000000;
-  font-size: 20px;
-  font-weight: 300;
-  transition: 0.2s ease-out;
-}
-
-header input:focus {
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-main {
-  flex: 1 1 100%;
-  padding: 25px 25px 50px;
-  right: 150px;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  text-align: left;
-}
-
-.location .city {
-  color: black;
-  font-size: 32px;
-  font-weight: 500;
-  margin-bottom: 5px;
-}
-
-.location .date {
-  color: black;
-  font-size: 16px;
-}
-
-.current .temp {
-  color: black;
-  font-size: 50px;
-  font-weight: 900;
-  margin: 30px 0px;
-}
-
-.current .temp span {
-  font-weight: 500;
-}
-
-.current .weather {
-  color: black;
-  font-size: 32px;
-  font-weight: 700;
-  font-style: italic;
-  margin-bottom: 15px;
-}
-
-.current .hi-low {
-  color: black;
-  font-size: 24px;
-  font-weight: 500;
-}
-
-header #search-btn{
-	height: 50px;
-	width: 100px;
-	padding: 10px;
-	border: none;
-	outline: box;
-    background-color: #ef6907;
-	color: gray;
-	font-size: 25px;
-}
-
-header #search-btn:hover{
-	background: orange;
-	cursor: pointer;
-}
-
-.stats-container {
-	text-align: center;
-	float: right;
-	display: inline-block;
-}
-.location-container {
-	display: inline-block;
-}
-.data-container {
-	border: 2px solid #feb47b;
-	margin-right: 30%;
-	margin-left: 30%;
-
-}
-h4 {
-	font-size: 85%;
- 	color: gray;
- 	font-family: 'Roboto', sans-serif;
- 	font-weight: 300;
- 	text-align: center;
- 	padding-top: 20px;
- 	padding-left: 20px;
- 	padding-right: 20px;
- 	padding-bottom: 5px;
-}
-.footer {
-	font-family: 'Roboto', sans-serif;
-	bottom: 0;
-	font-size: 75%;
-	padding: 5px;
-}
-*/
