@@ -1,6 +1,3 @@
-<!-- Basic code to get things running -->
-<!-- ERRORS ARE STILL PRESENT -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,47 +9,41 @@
   <script src="jquery-3.5.1.min.js"></script>
   <link rel="stylesheet" href="output_style.css">
 </head>
-
 <body>
-  <div class="app-wrap">
-    <header>
-      <input type="text" autocomplete="off" class="search-box" placeholder="Search for a Location..." />
-      <button type="submit" id="search-btn">Search</button>
-    </header>
+  <header>
+    <input type="text" autocomplete="off" class="search-box" placeholder="Search for a Location..." />
+    <button type="submit" class = "search-button" id="search-btn">Search</button>
+  </header>
+  <main>
 
+    <div class = "weather-info"> 
+        <h4>Date:</h4>
+        <div class="date"></div>
+		<h4>City:</h4>
+        <div class="city"></div>
+        <h4>Temperature:</h4>
+        <div class="temp"><span></span></div>
+        <h4>Weather:</h4>
+        <div class="weather"></div>
+        <h4>Daily Low and High:</h4>
+        <div class="hAndl"></div>
+    </div>
 
-    <main>
-      <div class="weather-container">
-        <div class="location">
-          <h4>City</h4>
-          <div class="city"></div>
-          <h4>Date</h4>
-          <div class="date"></div>
-        </div>
-        <div class="current">
-          <h4>Temperature</h4>
-          <div class="temp"><span></span></div>
-          <h4>Weather</h4>
-          <div class="weather"></div>
-          <h4>Low/Hi</h4>
-          <div class="hi-low"></div>
-        </div>
-      </div>
-      <div class="covid-container">
-        <div class="stats-container">
-          <h4>Country</h4>
-          <h1 id="countryNm"></h1>
-          <h4>Case Total</h4>
-          <h1 id="cases"></h1>
-          <h4>Death Total</h4>
-          <h1 id="deaths"></h1>
-          <h4>Survival Rate</h4>
-          <h1 id="sRate"></h1>
-        </div>
-      </div>
-    </main>
-  </div>
+    <div class="covid-info">
+        <h4>Country:</h4>
+        <p id="countryNm"></p>
+        <h4>Case Total:</h4>
+        <p id="cases"></p>
+        <h4>Death Total:</h4>
+        <p id="deaths"></p>
+        <h4>Survival Rate:</h4>
+        <p id="sRate"></p>
+    </div>
+
+  </main>
+
   <script src="backend_prac.js"></script>
+
 </body>
 
 </html>

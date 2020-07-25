@@ -5,16 +5,6 @@
 }
 
 body {
-  font-family: 'montserrat', sans-serif;
-  background-image: url('bg.jpg');
-  background-size: cover;
-  background-position: top center;
-}
-
-.app-wrap {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   background-color: lightblue;
 }
 
@@ -33,8 +23,7 @@ header input {
   border: none;
   outline: none;
   background-color: rgba(255, 255, 255, 0.3);
-  border-bottom: 3px solid #ef6907;
-  
+  border-bottom: 3px solid orange;
   color: #000000;
   font-size: 20px;
   font-weight: 300;
@@ -45,114 +34,81 @@ header input:focus {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-/*main {
-  flex: 1 1 100%;
-  padding: 25px 25px 50px;
-  right: 150px;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  text-align: left;
-}*/
-
-/*
-.location .city {
-  color: green;
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.location .date {
-  color: black;
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.current .temp {
-  color: black;
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.current .temp span {
-  font-weight: 700;
-}
-
-.current .weather {
-  color: black;
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.current .hi-low {
-  color: black;
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 30px;
-  text-align: center;
-}*/
-
 header #search-btn{
-	height: 50px;
-	width: 100px;
-	padding: 10px;
-	border: none;
-	outline: box;
-  background-color: #ef6907;
-	color: gray;
-	font-size: 25px;
+    height: 50px;
+    width: 100px;
+    padding: 10px;
+    border: none;
+    outline: box;
+	background-color: orange;
+    color: white;
+    font-size: 25px;
 }
 
 header #search-btn:hover{
-	background: orange;
-	cursor: pointer;
+    background: orange;
+    cursor: pointer;
 }
 
-.stats-container {
-  margin-left: 425px;
-  text-align: center;
-  float: center;
-  color: green;
-	display: inline-block;
-}
-
-
-
-.covid-container {
-	border: 2px solid #feb47b;
-	margin-left: 45%;
-	margin-right: 5%;
-}
 h4 {
-	font-size: 85%;
- 	color: gray;
- 	font-family: 'Roboto', sans-serif;
- 	font-weight: 300;
- 	padding-top: 20px;
- 	padding-bottom: 5px;
-	padding-right: 10px;
-	text-align: center;
+    font-size: 130%;
+     color: black;
+     font-family: 'Roboto', sans-serif;
+     font-weight: 300;
+     padding-top: 20px;
+     padding-bottom: 5px;
+	 padding-right: 10px;
+	 text-align: center;
+	 line-height: 200%;
 
 }
-.weather-container {
-	border: 2px solid #feb47b;
-	margin-left: 5%;
-  margin-right: 45%;
-  float: center;
-  color: green;
-  display: inline-block;
+
+.weather-info {
+  float: left;
+  padding-left: 20%;
+  text-align: center;
 }
-.footer {
-	font-family: 'Roboto', sans-serif;
-	bottom: 0;
-	font-size: 75%;
-	padding: 5px;
+
+.covid-info {
+  float:right;
+  padding-right: 20%;
+  text-align: center;
+}
+
+/*Text Formatting for Data*/
+.weather-info .date{
+  color: white;
+  font-size: 130%;
+}
+.weather-info .city{
+  color: white;
+  font-size: 130%;
+}
+.weather-info .temp{
+  color: white;
+  font-size: 130%;
+}
+.weather-info .weather{
+  color: white;
+  font-size: 130%;
+}
+.weather-info .hAndl{
+  color: white;
+  font-size: 130%;
+}
+.covid-info #countryNm{
+  color: white;
+  font-size: 130%;
+}
+.covid-info #cases{
+  color: white;
+  font-size: 130%;
+}
+.covid-info #deaths{
+  color: white;
+  font-size: 130%;
+}
+.covid-info #sRate{
+  color: white;
+  font-size: 130%;
 }

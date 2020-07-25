@@ -6,57 +6,63 @@ const api = {
 }
 
 const searchbox = document.querySelector('.search-box');
-searchbox.addEventListener('keypress', setQuery);
+searchbox.addEventListener('keypress', goSearch);
 
-
-// searches the location
-function setQuery(evt) {
-  if (evt.keyCode == 13) {
-    getResults(searchbox.value);
+//when clicking the search box
+document.getElementById("search-btn").onclick = function setQueryBtn () {
+  getResults(searchbox.value)
+}
+// searches the location based on pressing enter
+function goSearch(loc) {
+  if (loc.keyCode == 13) {
+    getWeatherResults(searchbox.value);
   }
 }
 
-// converts location into results
-function getResults(query) {
-  fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-    .then(weather => {
-      return weather.json();
-    }).then(displayResults);
-}
-
-// obtains weather information and country for corona data
-function displayResults(weather) {
-  let city = document.querySelector('.location .city');
-  city.innerText = `${weather.name}, ${weather.sys.country}`;
-
-  let now = new Date();
-  let date = document.querySelector('.location .date');
-  date.innerText = dateBuilder(now);
-
-  let temp = document.querySelector('.current .temp');
-  temp.innerHTML = `${Math.round(weather.main.temp)}<span>°c</span>`;
-
-  let weather_el = document.querySelector('.current .weather');
-  weather_el.innerText = weather.weather[0].main;
-
-  let hilow = document.querySelector('.hi-low');
-  hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`;
-
-  // Reading in coordinates for location
-  let countryCode = weather.sys.country;
-  getCountryID(countryCode);
-}
-
 // builds the date
-function dateBuilder(d) {
-  let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+function getDate(curr) {
+  let month = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
+  let day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let currDay = day[curr.getDay()];
+  let currMonth = month[curr.getMonth()];
+  let currDate = curr.getDate();
+  let currYr = curr.getFullYear();
 
-  let day = days[d.getDay()];
-  let date = d.getDate();
-  let month = months[d.getMonth()];
-  let year = d.getFullYear();
-  return `${day} ${date} ${month} ${year}`;
+  // builds string to return date
+  curr = currDay + ', ' + currMonth + ' ' + currDate + ', ' + currYr;
+  return curr;
+}
+
+// converts location into results
+function getWeatherResults(query) {
+  fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+  .then(function(resp) { return resp.json() })
+  .then(function(weather) {
+    //obtains data from API and sets that data
+    let city = document.querySelector('.city');
+    let temp = document.querySelector('.temp');
+    let date = document.querySelector('.date');
+    let weather_el = document.querySelector('.weather');
+    let hilow = document.querySelector('.hAndl');
+    
+    // Prints values to webpage
+    city.innerText = `${weather.name}, ${weather.sys.country}`;
+    temp.innerHTML = `${((Math.round(weather.main.temp)) * (9/5) + 32).toFixed(1)}<span>°F</span>`;
+    weather_el.innerText = weather.weather[0].main;
+    hilow.innerText = `${((Math.round(weather.main.temp_min)) * (9/5) + 32).toFixed(1)}°F - ${((Math.round(weather.main.temp_max)) * (9/5) + 32).toFixed(1)}°F`;
+  
+    //Helper function to build dates
+    let currDate = new Date();
+    date.innerText = getDate(currDate);
+  
+    // Reading in coordinates for location
+    let countryCode = weather.sys.country;
+    getCountryID(countryCode);
+
+  })
+  .catch(function() {
+      console.log("error");
+  })
 }
 
 // Loop function to search location API (replace hard coded converter)
@@ -207,8 +213,8 @@ function getCountryID(countryAbb) {
         dGb = dGb + data.locations[257].latest.deaths;
         let confirmedCasesGb = cGb;
         let confirmedDeathsGb = dGb;
-        let survivalRateGb = (1 - (confirmedDeathsAu / confirmedCasesAu)) * 100;
-        let cNameAuGb = data.locations[217].country;
+        let survivalRateGb = (1 - (dGb / cGb)) * 100;
+        let cNameGb = data.locations[217].country;
         document.getElementById('cases').innerHTML = confirmedCasesGb.toLocaleString('en');
         document.getElementById('deaths').innerHTML = confirmedDeathsGb.toLocaleString('en');
         document.getElementById('sRate').innerHTML = survivalRateGb.toLocaleString('en') + ' %';
