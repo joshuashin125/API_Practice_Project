@@ -3,6 +3,8 @@ This project will practice front and back end development skills utilizing APIs 
 
 Collaborated with Vineeth Vemuri
 
+The fully function copy is located within the API Project Folder
+
 
 
 API Data provided from: 
