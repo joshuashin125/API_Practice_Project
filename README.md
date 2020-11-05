@@ -2,9 +2,13 @@
 This project will practice front and back end development skills utilizing APIs to access data
 ------------------------------------------------------------------------------------------------
 Contents:
+---------
 *backend_prac.js -> backend (in javascript) for project
+---------
 *jquery -> jquery file
+---------
 *output.html -> frontend html
+---------
 *output_style.css -> holds styling information for frontend
 ------------------------------------------------------------------------------------------------
 API Data provided from: 
